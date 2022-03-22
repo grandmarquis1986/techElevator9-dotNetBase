@@ -10,7 +10,14 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
+
+		if(vacation) {
+			return true;
+		} else if (!weekday) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -22,7 +29,11 @@ public class Exercises {
 	 monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return false;
+		if ((aSmile && bSmile) || (!aSmile && !bSmile)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -32,7 +43,11 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if (a == b) {
+			return (a+b)*2;
+		} else {
+			return a+b;
+		}
 	}
 
 	/*
@@ -45,7 +60,16 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
-		return 0;
+		int diff = n - 21;
+		if (diff < 0) {
+			diff = diff * -1;
+		}
+		if (n > 21) {
+			return diff * 2;
+		} else {
+			return diff;
+		}
+
 	}
 
 	/*
@@ -57,7 +81,11 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		if((hour < 7 || hour > 20) && talking) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -67,7 +95,11 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
-		return false;
+		if((a == 10 || b == 10) || a + b == 10) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -78,7 +110,13 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		return false;
+		if (!negative && ((a > 0 && b < 0) || (a < 0 && b > 0))) {
+			return true;
+		} else if (negative && (a < 0 && b < 0)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -89,7 +127,13 @@ public class Exercises {
 	 or35(8) → false
 	 */
 	public boolean or35(int n) {
-		return false;
+		if (n % 3 == 0) {
+			return true;
+		} else if (n % 5 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
