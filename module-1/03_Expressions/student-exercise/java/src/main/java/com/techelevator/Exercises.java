@@ -143,7 +143,11 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		return false;
+		if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 || temp2 < 0)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -153,7 +157,11 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
-		return false;
+		if ((a > 9 && a < 21) || (b > 9 && b < 21)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -164,7 +172,14 @@ public class Exercises {
 	 hasTeen(20, 10, 13) → true
 	 */
 	public boolean hasTeen(int a, int b, int c) {
-		return false;
+		boolean containsTeen = false;
+		int[] numbers = new int[] {a,b,c};
+		for (int number:numbers) {
+			if (number > 12 && number < 20) {
+				containsTeen = true;
+			}
+		}
+		return containsTeen;
 	}
 
 	/*
@@ -175,6 +190,9 @@ public class Exercises {
 	 loneTeen(13, 13) → false
 	 */
 	public boolean loneTeen(int a, int b) {
+		if((a > 12 && a < 20) ^ (b > 12 && b < 20)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -185,7 +203,14 @@ public class Exercises {
 	 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
-		return 0;
+		int largest = a;
+		int[] nums = new int[] {a,b,c};
+		for (int num:nums) {
+			if (num > largest) {
+				largest = num;
+			}
+		}
+		return largest;
 	}
 
 	/*
@@ -196,7 +221,14 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
-		return false;
+		boolean between3050 = false;
+		if((a >= 30 && a <= 40) && (b >= 30 && b <= 40)) {
+			between3050 = true;
+		}
+		if((a >= 40 && a <= 50) && (b >= 40 && b <= 50)) {
+			between3050 = true;
+		}
+		return between3050;
 	}
 
 	/*
@@ -207,7 +239,19 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-		return 0;
+		int result = 0;
+		if((a >= 10 && a <= 20) && (b >= 10 && b <=20)) {
+			if (a >= b) {
+				result = a;
+			} else {
+				result = b;
+			}
+		} else if (a >= 10 && a <= 20) {
+			result = a;
+		} else if (b >= 10 && b <=20) {
+			result = b;
+		}
+		return result;
 	}
 
 	/*
@@ -220,7 +264,13 @@ public class Exercises {
 	 cigarParty(70, true) → true
 	 */
 	public boolean cigarParty(int cigars, boolean isWeekend) {
-		return false;
+		boolean successful = false;
+		if(cigars >= 40 && isWeekend) {
+			successful = true;
+		} else if (!isWeekend && (cigars >= 40 && cigars <= 60)) {
+			successful = true;
+		}
+		return successful;
 	}
 
 	/*
@@ -235,7 +285,15 @@ public class Exercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
-		return 0;
+		int rating;
+		if (you <=2 || date <= 2) {
+			rating = 0;
+		} else if (you >= 8 || date >= 8) {
+			rating = 2;
+		} else {
+			rating = 1;
+		}
+		return rating;
 	}
 
 	/*
